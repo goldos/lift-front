@@ -6,7 +6,7 @@
     "start": "ng serve --configuration=local",
     "start:local": "ng serve --configuration=local",
     "start:boond": "ng serve --configuration=boond",
-    "build": "ng build --configuration production",
+    "build": "ng build --configuration=boond production",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
