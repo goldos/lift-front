@@ -1,0 +1,38 @@
+<div class="action-toolbar">
+  <form [formGroup]="form" class="form-container">
+    <mat-form-field>
+      <mat-label>Période d'observation</mat-label>
+      <input
+        matInput
+        [matDatepicker]="dp"
+        formControlName="date"
+        placeholder="Choisissez un mois"
+      />
+      @if (form.get('date')?.hasError('required')) {
+        <mat-error> La période d'observation est requise. </mat-error>
+      }
+      <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp startView="multi-year" (monthSelected)="setMonthAndYear($event, dp)">
+      </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Agence</mat-label>
+      <mat-select formControlName="agency" required>
+        <mat-option [value]="3">Paris</mat-option>
+        <mat-option [value]="2">Toulouse</mat-option>
+        <mat-option [value]="4">Bordeaux</mat-option>
+        <mat-option [value]="5">Qolibris</mat-option>
+      </mat-select>
+      @if (form.get('agency')?.hasError('required')) {
+        <mat-error> L'agence est requise. </mat-error>
+      }
+    </mat-form-field>
+    <button mat-raised-button (click)="onSubmit()" type="submit" [disabled]="loading()">
+      <mat-icon>search</mat-icon>
+      <span>Rechercher</span>
+    </button>
+  </form>
+</div>
+@if (loading()) {
+  <app-alert [message]="message()" alertType="warning"></app-alert>
+}

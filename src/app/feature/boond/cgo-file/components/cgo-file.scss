@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+@use '../../../../../assets/themes/lift-colors' as theme;
+mat-card {
+  @include mat.card-overrides((
+    filled-container-color: mat.m2-get-color-from-palette(theme.$primary-palette, 100),
+  ));
+  .mat-tab-label-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

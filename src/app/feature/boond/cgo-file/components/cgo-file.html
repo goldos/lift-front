@@ -1,0 +1,37 @@
+<h1>Fichier CGO<mat-icon>fiber_manual_record</mat-icon></h1>
+<mat-card appearance="raised">
+  <mat-card-header>
+    <app-cgo-file-form></app-cgo-file-form>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="mat-tab-label-content">
+            <mat-icon>people</mat-icon>
+            <span>Ressources</span>
+          </div>
+        </ng-template>
+        <app-ressources-table></app-ressources-table>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="mat-tab-label-content">
+            <mat-icon>event_note</mat-icon>
+            <span>CRA</span>
+          </div>
+        </ng-template>
+        <app-cra-table></app-cra-table>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="mat-tab-label-content">
+            <mat-icon>receipt</mat-icon>
+            <span>Note de frais</span>
+          </div>
+        </ng-template>
+        <app-notes-frais-table></app-notes-frais-table>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

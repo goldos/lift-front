@@ -1,0 +1,128 @@
+<app-cgo-file-table-header
+  [dataSource]="cra()"
+  [displayedColumns]="displayedColumns"
+></app-cgo-file-table-header>
+
+<table mat-table [dataSource]="cra()" class="mat-elevation-z8">
+  <ng-container matColumnDef="nomPrenom">
+    <th mat-header-cell *matHeaderCellDef>Nom/ Prénom</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.nomPrenom }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="mois">
+    <th mat-header-cell *matHeaderCellDef>Mois</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.mois }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="annee">
+    <th mat-header-cell *matHeaderCellDef>Année</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.annee }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nom">
+    <th mat-header-cell *matHeaderCellDef>Nom</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.nom }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="prenom">
+    <th mat-header-cell *matHeaderCellDef>Prénom</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.prenom }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>Type</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.type }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.date }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nonTemps">
+    <th mat-header-cell *matHeaderCellDef>Non temps</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.nonTemps }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="duree">
+    <th mat-header-cell *matHeaderCellDef>Durée</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.duree }}
+      }
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="societe">
+    <th mat-header-cell *matHeaderCellDef>Société</th>
+    <td mat-cell *matCellDef="let data">
+      @if (loading()) {
+        <ngx-skeleton-loader></ngx-skeleton-loader>
+      } @else {
+        {{ data.societe }}
+      }
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+      @if (loading()) {
+        <mat-progress-bar mode="determinate" [value]="progress()"></mat-progress-bar>
+      } @else {
+        Aucune donnée disponible
+      }
+    </td>
+  </tr>
+</table>

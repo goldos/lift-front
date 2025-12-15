@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+@use '../../../../../../../assets/themes/lift-colors' as theme;
+.action-toolbar {
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .results-text {
+    color: mat.m2-get-color-from-palette(theme.$primary-palette, 35);
+    .nb-result {
+      color: mat.m2-get-color-from-palette(theme.$tertiary-palette, 35);
+    }
+  }
+}

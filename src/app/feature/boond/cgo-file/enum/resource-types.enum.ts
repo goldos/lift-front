@@ -1,0 +1,33 @@
+export enum ResourceTypesEnum {
+  INTERNAL_ID = 0,
+  EXTERNAL_ID = 1,
+  BUSINESS_MANAGER_ID = 2,
+  RESSOURCES_HUMAINES_ID = 3,
+  DIRECTION_OPERATIONS_ID = 6,
+  DOCTEUR_ID = 7,
+  COMMUNICATION_ID = 8,
+  DIRECTION_GENERALE_ID = 11,
+  DIRECTION_FINANCIERE_ID = 12,
+  ADMINISTRATION_ID = 15,
+}
+
+export enum ResourceTypesLabelEnum {
+  INTERNAL_LONG = 'Consultant Interne',
+  EXTERNAL_LONG = 'Consultant Externe',
+  VIP_LONG = 'Interne',
+  BUSINESS_MANAGER_SHORT = 'BM',
+  BUSINESS_MANAGER_LONG = 'Business Manager',
+  RESSOURCES_HUMAINES_SHORT = 'RH',
+  RESSOURCES_HUMAINES_LONG = 'Ressources Humaines',
+  DIRECTION_OPERATIONS_LONG = 'Direction des Operations',
+  DOCTEUR_SHORT = 'DO',
+  DOCTEUR_LONG = 'Docteur',
+  COMMUNICATION_SHORT = 'COM',
+  COMMUNICATION_LONG = 'Communication',
+  DIRECTION_GENERALE_SHORT = 'DG',
+  DIRECTION_GENERALE_LONG = 'Direction Générale',
+  DIRECTION_FINANCIERE_SHORT = 'DF',
+  DIRECTION_FINANCIERE_LONG = 'Direction Financière',
+  ADMINISTRATION_SHORT = 'AD',
+  ADMINISTRATION_LONG = 'Administration',
+}

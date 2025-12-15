@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+
+mat-toolbar {
+  @include mat.toolbar-overrides((
+    standard-height: 40px,
+    container-background-color: transparent
+  ));
+  a {
+    text-align: center;
+    width: 68px;
+  }
+}

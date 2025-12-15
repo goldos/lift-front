@@ -1,0 +1,15 @@
+<div class="action-toolbar">
+  <button
+    matButton
+    [cdkCopyToClipboard]="tableDataAsTsv()"
+    (cdkCopyToClipboardCopied)="openSnackBar()"
+    [disabled]="!dataSource() || loading()"
+    matTooltip="Copier les lignes pour les coller dans Excel"
+  >
+    <mat-icon>content_copy</mat-icon>
+    <span>Copier les données</span>
+  </button>
+  <span class="results-text"
+    >Il y a <span class="nb-result">{{ dataSource().length }}</span> lignes</span
+  >
+</div>

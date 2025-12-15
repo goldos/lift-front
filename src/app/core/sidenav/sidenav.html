@@ -1,0 +1,44 @@
+<mat-card appearance="raised" id="app-sidenav" [class.expanded]="isExpanded()">
+  <button
+    matIconButton
+    id="sidenav-toggle"
+    (click)="toggleSidenav()"
+    [matTooltip]="tooltipExtendText()"
+    matTooltipPosition="right"
+  >
+    <mat-icon>{{ isExpanded() ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+  </button>
+  <mat-grid-list cols="1" rowHeight="50px">
+    <mat-grid-tile>
+      <a
+        mat-raised-button
+        class="nav-button"
+        routerLink="/home"
+        routerLinkActive="active"
+        [matTooltip]="'Accueil'"
+        matTooltipPosition="right"
+      >
+        <mat-icon matListItemIcon>home</mat-icon>
+        @if (isExpanded()) {
+          <span data-testClass="sidebar-link-text">Accueil</span>
+        }
+      </a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <a
+        mat-raised-button
+        class="nav-button"
+        routerLink="/boond"
+        routerLinkActive="active"
+        [matTooltip]="'Fichier CGO'"
+        matTooltipPosition="right"
+        [disabled]="authIsLoading()"
+      >
+        <mat-icon matListItemIcon>file_download</mat-icon>
+        @if (isExpanded()) {
+          <span data-testClass="sidebar-link-text">Fichier CGO</span>
+        }
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

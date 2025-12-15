@@ -1,0 +1,95 @@
+@use '@angular/material' as mat;
+@use './assets/themes/lift-colors' as theme;
+
+$lift-m3-light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: theme.$primary-palette,
+    tertiary: theme.$tertiary-palette,
+  ),
+  typography: (
+    brand-family: 'Raleway',
+    plain-family: 'Raleway',
+    bold-weight: 500,
+    medium-weight: 400,
+    regular-weight: 300,
+  ),
+));
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('assets/fonts/raleway/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('assets/fonts/raleway/Raleway-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-style: italic;
+  font-weight: 100 900;
+}
+
+@include mat.all-component-themes($lift-m3-light-theme);
+
+html, body { height: 100%; }
+
+body {
+  background-color: mat.get-theme-color($lift-m3-light-theme, neutral, 100);
+  color: mat.get-theme-color($lift-m3-light-theme, neutral, 10);
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0 10px;
+}
+
+h1 {
+  color: mat.get-theme-color($lift-m3-light-theme, primary, 35);
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  padding: 0 25px 0 0;
+  mat-icon {
+    position: absolute;
+    top: -10px;
+    right: -0px;
+    color: mat.m2-get-color-from-palette(theme.$tertiary-palette, 80);
+  }
+}
+@include mat.snack-bar-overrides((
+  container-color: mat.get-theme-color($lift-m3-light-theme, primary, 35),
+));
+
+@include mat.card-overrides((
+  filled-container-color: mat.get-theme-color($lift-m3-light-theme, neutral, 95),
+  elevated-container-color: mat.get-theme-color($lift-m3-light-theme, neutral, 100),
+));
+
+@include mat.button-overrides((
+  protected-container-color: mat.get-theme-color($lift-m3-light-theme, primary, 35),
+  protected-label-text-color: mat.get-theme-color($lift-m3-light-theme, neutral, 100)
+));
+
+@include mat.option-overrides((
+  selected-state-layer-color: mat.get-theme-color($lift-m3-light-theme, primary, 35),
+  selected-state-label-text-color: mat.get-theme-color($lift-m3-light-theme, neutral, 100)
+));
+
+.mat-mdc-table {
+  border-radius: 10px;
+  overflow: hidden;
+  thead {
+    background-color: mat.get-theme-color($lift-m3-light-theme, primary, 35) !important;
+    color: mat.get-theme-color($lift-m3-light-theme, primary, 100);
+    .mat-mdc-header-row {
+      color: mat.get-theme-color($lift-m3-light-theme, primary, 100);
+    }
+  }
+  tbody {
+    tr:nth-child(even) {
+      background-color: mat.get-theme-color($lift-m3-light-theme, neutral, 95);
+    }
+    tr:nth-child(odd) {
+      background-color: mat.get-theme-color($lift-m3-light-theme, primary, 100);
+    }
+  }
+}

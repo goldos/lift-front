@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+@use '../../../../assets/themes/lift-colors' as theme;
+mat-card {
+  &.warning {
+    background-color: #fff3cd;
+    border-color: #ffe69c;
+    color: #664d03;
+  }
+}

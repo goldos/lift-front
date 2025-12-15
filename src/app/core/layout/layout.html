@@ -1,0 +1,20 @@
+<div id="layout">
+  <header>
+    <app-header></app-header>
+  </header>
+  <div class="layout-container">
+    <app-sidenav></app-sidenav>
+    <mat-card appearance="filled" id="app-content">
+      @if (routerLoading()) {
+        <ngx-skeleton-loader [theme]="{ height: '100%' }"></ngx-skeleton-loader>
+      } @else {
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      }
+    </mat-card>
+  </div>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>

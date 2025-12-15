@@ -1,0 +1,74 @@
+@use '@angular/material' as mat;
+@use '../../../assets/themes/lift-colors' as theme;
+
+$animation-duration: 0.3s;
+
+$sidenav-width-compact: 100px;
+$sidenav-width-expanded: 195px;
+
+#app-sidenav {
+  background-color: #085d57;
+  position: relative;
+  width: $sidenav-width-compact;
+  z-index: 10;
+  height: 100%;
+  padding: 16px;
+  transition: width $animation-duration ease-in-out;
+
+  #sidenav-toggle {
+    position: absolute;
+    right: -15px;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: mat.m2-get-color-from-palette(theme.$tertiary-palette, 80);
+    border: 1px solid mat.m2-get-color-from-palette(theme.$primary-palette, 35);
+  }
+
+  .nav-button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    @include mat.progress-spinner-theme((
+      active-indicator-color: mat.m2-get-color-from-palette(theme.$primary-palette, 100)
+    ));
+    mat-icon {
+      margin: 0;
+    }
+    &:not(.active) {
+      box-shadow: unset;
+    }
+    * {
+      color: mat.m2-get-color-from-palette(theme.$primary-palette, 100);
+    }
+    &.active {
+      background-color: mat.m2-get-color-from-palette(theme.$neutral-palette, 95);
+      * {
+        color: mat.m2-get-color-from-palette(theme.$primary-palette, 35);
+      }
+    }
+    &:hover {
+      background-color: mat.m2-get-color-from-palette(theme.$neutral-palette, 95);
+      * {
+        color: mat.m2-get-color-from-palette(theme.$primary-palette, 35);
+      }
+    }
+    &:focus {
+      border: 3px solid mat.m2-get-color-from-palette(theme.$tertiary-palette, 80);
+    }
+  }
+
+  &.expanded {
+    width: $sidenav-width-expanded;
+
+    .nav-button {
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+}
