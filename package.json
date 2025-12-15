@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration=local",
+    "start": "ng serve --configuration=boond",
     "start:local": "ng serve --configuration=local",
     "start:boond": "ng serve --configuration=boond",
-    "build": "ng build --configuration=boond production",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
