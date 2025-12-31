@@ -12,7 +12,7 @@ export class AuthService {
 
 boondModeSession(signedRequest: string): Observable<unknown> {
   return this.http.post(
-    `${this.apiUrl}/auth/boond-login`,
+    `${this.apiUrl}/boond-login`,
     { signedRequest },
     { withCredentials: true } // ✅ essentiel pour le cookie connect.sid
   );
