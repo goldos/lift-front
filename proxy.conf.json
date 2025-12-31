@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://lift-back.vercel.app",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
