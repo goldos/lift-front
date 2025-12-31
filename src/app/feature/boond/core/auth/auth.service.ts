@@ -10,9 +10,14 @@ export class AuthService {
   private apiUrl = `${environment.apiUrl}/auth`;
   private http = inject(HttpClient);
 
-  boondModeSession(signedRequest: string): Observable<unknown> {
-    return this.http.post(`${this.apiUrl}/boond-login`, { signedRequest: signedRequest });
-  }
+boondModeSession(signedRequest: string): Observable<unknown> {
+  return this.http.post(
+    `${this.apiUrl}/auth/boond-login`,
+    { signedRequest },
+    { withCredentials: true } // ✅ essentiel pour le cookie connect.sid
+  );
+}
+
 
   localModeSession(): Observable<unknown> {
     return this.http.get(`${this.apiUrl}/local-login`);
